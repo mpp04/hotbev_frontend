@@ -1,0 +1,23 @@
+<section class="hero is-info is-fullheight is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <div>
+                <h1 class="title">MENU</h1>
+                <p> Menu Items </p>
+                <div *ngFor="let c of coffees">
+                    {{ c.id }}
+                    {{ c.name }} 
+                    {{ c.description }}
+                        
+                </div>      
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        
+
+
+<!-- loop over our coffees and give them each a card
+-->

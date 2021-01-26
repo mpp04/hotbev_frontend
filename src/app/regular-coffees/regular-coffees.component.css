@@ -1,0 +1,5 @@
+.hero {
+    background-image: url('src/assets/img/hot_coffee_chic.jpg') !important;
+    background-size: cover;
+    background-position: center center;
+  }
