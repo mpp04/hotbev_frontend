@@ -1,70 +1,32 @@
-
-// DRAFT PIPELINE MODELS!
-
-pipeline 
-{
-	agent any
-	stages 
-	{
-		stage('One') 
-		{
-			steps 
-			{ 
-			echo 'Hello World'
-			echo 'Checking system...'
-			}
-		}
-		stage('Two')
-		{
-			steps 
-			{ 
-			echo 'This is stage 2'	
-			echo "Resolve ${env:ec2}"
-			}
-			
-		}
-		stage('Interactive test') 
-		{
-            input 
-			{
-                message "Should we continue?"
-                ok "Yes, we should."
-                submitter "alice,bob"
-                parameters 
-				{
-                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                }
-            }
-            steps 
-			{
-                echo "Hello, ${PERSON}, nice to meet you."
-            }
-		}
-	}
-}
-
 pipeline {
-    agent any
-    tools {
-        maven 'maven' 
+  agent none
+  stages {
+    stage('TEST,BUILD AND PUSH ON PRESLAV'){
+      agent {
+        label 'master'
+      }
+      steps {
+        git url: 'https://github.com/mpp04/hotbev_frontend.git', branch: 'dev'
+        bat 'dir'
+        bat 'mvn test'
+        bat 'docker build -t mpp04/hotbev_frontend .'
+        bat "docker login -u ${env.DOCKER_USR} -p $env.DOCKER_PWD"
+        bat 'docker push mpp04/hotbev_frontend'
+      }
     }
-    stages {
-        stage('Example') {
-            steps {
-                //sh 'mvn --version'
-				bat mvn --version
-            }
-        }
+    stage('DEPLOY ON EC2'){
+      agent {
+        label 'slave'
+      }
+      steps {
+        sh 'echo $HOME' //ensure user ubuntu and jenkins are added to sudoers file
+        // sh 'sudo service docker restart'
+        sh 'sudo docker stop frontend'
+        sh 'sudo docker rm frontend'
+        sh "sudo docker login -u $env.DOCKER_USR -p $env.DOCKER_PWD"
+        sh 'sudo docker pull mpp04/hotbev_frontend'
+        sh 'sudo docker run -d -p 80:80 --name frontend mpp04/hotbev_frontend'
+      }
     }
-}
-
-
-node {
-    stage('Example') {
-        if (env.BRANCH_NAME == 'master') {
-            echo 'I only execute on the master branch'
-        } else {
-            echo 'I execute elsewhere'
-        }
-    }
+  }
 }
