@@ -8,7 +8,7 @@ pipeline {
       steps {
         git url: 'https://github.com/mpp04/hotbev_frontend.git', branch: 'dev'
         bat 'dir'
-        bat 'mvn test'
+        //bat 'mvn test'
         bat 'docker build -t mpp04/hotbev_frontend .'
         bat "docker login -u ${env.DOCKER_USR} -p $env.DOCKER_PWD"
         bat 'docker push mpp04/hotbev_frontend'
@@ -30,4 +30,3 @@ pipeline {
     }
   }
 }
-//test test
