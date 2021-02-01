@@ -1,0 +1,16 @@
+<section class="hero is-info is-fullheight is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <div>
+        <h1 class="title">Custom Coffee Drinks</h1>
+        <p> Menu Items </p>
+        <div *ngFor="let c of coffees">
+          ID {{ c.id }}
+          == name == {{ c.name }}
+          == Description == {{ c.description }}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

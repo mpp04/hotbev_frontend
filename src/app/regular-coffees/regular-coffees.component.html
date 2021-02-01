@@ -5,18 +5,18 @@
                 <h1 class="title">MENU</h1>
                 <p> Menu Items </p>
                 <div *ngFor="let c of coffees">
-                    {{ c.id }}
-                    {{ c.name }} 
-                    {{ c.description }}
-                        
-                </div>      
+                   ID {{ c.id }}
+                   == name == {{ c.name }}
+                   == Description == {{ c.description }}
+
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 
-        
+
 
 
 <!-- loop over our coffees and give them each a card

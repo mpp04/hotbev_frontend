@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoffeeServiceService } from '../services/coffee-service.service';
-import { CoffeeModel } from 'src/app/models/coffee-model.model';
+
 
 
 @Component({
@@ -9,16 +9,16 @@ import { CoffeeModel } from 'src/app/models/coffee-model.model';
   styleUrls: ['./regular-coffees.component.css']
 })
 export class RegularCoffeesComponent implements OnInit {
- 
+
 
 coffees:any= [];
 
 
   constructor(private coffeeService: CoffeeServiceService) {
-  
+
    }
 
-  ngOnInit()    { 
+  ngOnInit()    {
    this.getCoffees();
   //  this.addCoffees();
   }
@@ -26,14 +26,14 @@ coffees:any= [];
 
   getCoffees() {
     return this.coffeeService.getCoffees().subscribe((res: {}) =>
-    { console.log('getting all regular coffes');
+    { console.log('getting all regular coffees');
       this.coffees = res;     })
   }
 
 
   addCoffees() {
     return this.coffeeService.addCoffees('Cassandra Coffee', 'You drink this only once!')
-    .subscribe((res => 
+    .subscribe((res =>
     {
       console.log(res);
     } ));

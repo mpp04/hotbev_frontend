@@ -1,16 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IngredientsComponent } from 'src/app/coffee-drinks/components/ingredients/ingredients.component';
-
+import { CustomCoffeeDrinksComponent } from './components/custom-coffee-drinks/custom-coffee-drinks.component';
+import { HttpClientModule } from '@angular/common/http';
+import {BrowserModule} from "@angular/platform-browser";
 
 
 @NgModule({
-  declarations: [IngredientsComponent],
+  declarations: [
+    IngredientsComponent,
+    CustomCoffeeDrinksComponent
+
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    HttpClientModule
   ],
   exports: [
-    IngredientsComponent
+    IngredientsComponent,
+    CustomCoffeeDrinksComponent
   ]
 })
 export class CoffeeDrinksModule { }
