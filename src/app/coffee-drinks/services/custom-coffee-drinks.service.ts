@@ -11,8 +11,8 @@ export class CustomCoffeeDrinksService {
 
 
 
-  headers = new HttpHeaders({'Content-Type': 'application/json'});
-  headersXForm = new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded'});
+  //headers = new HttpHeaders({'Content-Type': 'application/json'});
+  headers = new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded'});
 
   URL = `${environment.CoffeeDrinksEndpoint}`;
 
@@ -23,7 +23,7 @@ export class CustomCoffeeDrinksService {
 
   getCustomCoffeeDrinks(): Observable<CustomCoffeeDrinks> {
     console.log('This is:' +this.URL)
-    return this.httpClient.get<CustomCoffeeDrinks>(this.URL + '/getCoffeeDrinks', {'headers':this.headers});
+    return this.httpClient.get<CustomCoffeeDrinks>(this.URL + '/getAllCoffeeDrinks', {'headers':this.headers});
 
     //return this.httpClient.get(this.CoffeesEndpoint);
 

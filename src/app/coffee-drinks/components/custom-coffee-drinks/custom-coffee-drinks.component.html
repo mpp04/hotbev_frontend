@@ -5,9 +5,18 @@
         <h1 class="title">Custom Coffee Drinks</h1>
         <p> Menu Items </p>
         <div *ngFor="let c of coffees">
-          ID {{ c.id }}
-          == name == {{ c.name }}
-          == Description == {{ c.description }}
+
+          :: ID :: {{ c.id }}
+
+          :: coffeeVariety :: {{ c.coffeeVariety }}
+
+          :: coffeeIngredients :: {{ c. coffeeIngredients }}
+
+          :: coffeeBrewingMethod :: {{ c. coffeeBrewingMethod }}
+
+          :: coffeeDrinkName :: {{ c.coffeeDrinkName }}
+
+          :: coffeeDrinkDescription :: {{ c.coffeeDrinkDescription }}
 
         </div>
       </div>
