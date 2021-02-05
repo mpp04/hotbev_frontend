@@ -9,12 +9,11 @@ import { CustomCoffeeDrinksService } from "../../services/custom-coffee-drinks.s
 })
 export class CustomCoffeeDrinksComponent implements OnInit {
 
-
-
   coffees:any=[];
+  modalStatus:string=" ";
 
-
-
+modalOn() { this.modalStatus="is-active" }
+modalOff() { this.modalStatus=""}
 
   constructor(private customCoffeeDrinksService: CustomCoffeeDrinksService) {}
 

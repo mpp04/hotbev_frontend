@@ -19,8 +19,6 @@ export class CustomCoffeeDrinksService {
 
   constructor(private httpClient: HttpClient) { }
 
-
-
   getCustomCoffeeDrinks(): Observable<CustomCoffeeDrinks> {
     console.log('This is:' +this.URL)
     return this.httpClient.get<CustomCoffeeDrinks>(this.URL + '/getAllCoffeeDrinks', {'headers':this.headers});
