@@ -12,12 +12,11 @@
   margin: auto;
 }
 
-#333 {
-  text-align: left;
-
+.make_own_ccd   {
+  text-align: right;
 }
 
 .modal-card-body {
   color: black;
-
 }
+

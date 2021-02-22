@@ -22,7 +22,7 @@
         -->
       </div>
       <div class="make_own_ccd" #333>
-        <p align="right">
+
       <label>  Make your own Custom Coffee Drink </label>
 
           <button class="button is-primary is-small"
@@ -41,147 +41,83 @@
           </header>
           <section class="modal-card-body">
    <div id="224" class="modal-content">
-          <p> CONTENT BE HERE!
+          <p>
+            <strong>
+           :: CUSTOM-MADE COFFEE DRINKS INSTRUCTIONS ::<br>
+            </strong>
 
-          asdadsa
-          </p>
-     <br><br>
-     <div class="dropdown" id="coffeeVarieties">
-       <div class="dropdown-trigger">
-         <label> Coffee Varieties </label>
-         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-           <span>Dropdown button</span>
-           <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-         </button>
-       </div>
-       <div class="dropdown-menu" id='drop-down-menu-coffeeVarieties' role="menu">
-         <div class="dropdown-content">
-           <a href="#" class="dropdown-item">
-             Dropdown item
-           </a>
-           <a class="dropdown-item">
-             Other dropdown item
-           </a>
-           <a href="#" class="dropdown-item is-active">
-             Active dropdown item
-           </a>
-           <a href="#" class="dropdown-item">
-             Other dropdown item
-           </a>
-           <hr class="dropdown-divider">
-           <a href="#" class="dropdown-item">
-             With a divider
-           </a>
-         </div>
-       </div>
-     </div>
-<br><br>
-     <div class="dropdown" id="coffeeIngredients">
-       <div class="dropdown-trigger"> <label> Coffee Ingredients</label>
-         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
 
-           <span>Dropdown button</span>
-           <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-         </button>
-       </div>
-       <div class="dropdown-menu" id="drop-down-menu-coffeeIngredients" role="menu">
-         <div class="dropdown-content">
-           <a href="#" class="dropdown-item">
-             Dropdown item
-           </a>
-           <a class="dropdown-item">
-             Other dropdown item
-           </a>
-           <a href="#" class="dropdown-item is-active">
-             Active dropdown item
-           </a>
-           <a href="#" class="dropdown-item">
-             Other dropdown item
-           </a>
-           <hr class="dropdown-divider">
-           <a href="#" class="dropdown-item">
-             With a divider
-           </a>
-         </div>
-       </div>
-     </div>
+            Using the following drop-down menus, you will have the chance to select the
+            elements of your custom-made coffee drink. Each drink is composed of the following elements:<br><br>
+
+            ** Coffee Variety **<br>
+            A selection from more than 60 coffee beans types. <br><br>
+
+            ** Coffee Ingredients **<br>
+            A selection of specific coffee ingredients. Yes, (espresso) coffee can be
+            an ingredient to another coffee. <br><br>
+
+            **  Coffee Filter **<br>
+            There are many filtration processes available in the brewing of coffees, each of which has
+            a different effect on the final taste. <br><br>
+
+            ** Coffee Brewing Method **<br>
+            As with filters, there are several coffee brewing methods available that have an independent effect on the
+            eventual coffee flavour. <br><br>
+
+            ** Name and Description ** <br>
+            Finally, after selecting the elements of your coffee, you have to give your new coffee drink name and a
+            short description. <br><br>
+                    </p>
 
      <br><br>
-
-     <div class="dropdown" id="Coffee Filter">
-       <div class="dropdown-trigger"> <label> coffeeFilter</label>
-         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-
-           <span>Dropdown button</span>
-           <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-         </button>
-       </div>
-       <div class="dropdown-menu" id="drop-down-menu-coffeeFilter" role="menu">
-         <div class="dropdown-content">
-           <a href="#" class="dropdown-item">
-             Dropdown item
-           </a>
-           <a class="dropdown-item">
-             Other dropdown item
-           </a>
-           <a href="#" class="dropdown-item is-active">
-             Active dropdown item
-           </a>
-           <a href="#" class="dropdown-item">
-             Other dropdown item
-           </a>
-           <hr class="dropdown-divider">
-           <a href="#" class="dropdown-item">
-             With a divider
-           </a>
-         </div>
-       </div>
-     </div>
+    <label> Coffee Varieties </label>
+    <select (change)="alertSelect($event)">
+      <option value="VALUE1"> VALUE 1</option>
+      <option value="VALUE2"> VALUE 2</option>
+      <option value="VALUE3"> VALUE 3</option>
+    </select>
 
      <br><br>
+     <label> Coffee Ingredients </label>
+     <select (change)="alertSelect($event)">
+       <option value="VALUE1"> VALUE 1</option>
+       <option value="VALUE2"> VALUE 2</option>
+       <option value="VALUE3"> VALUE 3</option>
+     </select>
 
-     <div class="dropdown" id="Coffee Brewing Method">
-       <div class="dropdown-trigger">
-         <label> coffeeBrewingMethod </label>
-         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+     <br><br>
+     <label> Coffee Filter </label>
+     <select (change)="alertSelect($event)">
+       <option value="VALUE1"> VALUE 1</option>
+       <option value="VALUE2"> VALUE 2</option>
+       <option value="VALUE3"> VALUE 3</option>
+     </select>
 
-           <span>Dropdown button</span>
-           <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-         </button>
-       </div>
-       <div class="dropdown-menu" id="drop-down-menu-coffeeBrewingMethod" role="menu">
-         <div class="dropdown-content">
-           <a href="#" class="dropdown-item">
-             Dropdown item
-           </a>
-           <a class="dropdown-item">
-             Other dropdown item
-           </a>
-           <a href="#" class="dropdown-item is-active">
-             Active dropdown item
-           </a>
-           <a href="#" class="dropdown-item">
-             Other dropdown item
-           </a>
-           <hr class="dropdown-divider">
-           <a href="#" class="dropdown-item">
-             With a divider
-           </a>
-         </div>
-       </div>
-     </div>
+     <br><br>
+     <label> Coffee Brewing Method </label>
+     <select (change)="alertSelect($event)">
+       <option value="VALUE1"> VALUE 1</option>
+       <option value="VALUE2"> VALUE 2</option>
+       <option value="VALUE3"> VALUE 3</option>
+     </select>
+
+        <br><br> <br><br> <br><br>
+            <p>
+              <strong>
+                :: YOUR CUSTOM COFFEE DRINK :: <br>
+              </strong>
+              .:` Variety     `:. {{ selectEvent }}<br>
+              .:` Ingredients `:. {{ selectEvent }}<br>
+              .:` Filter      `:. {{ selectEvent }}<br>
+              .:` Brewing     <br>
+                  Method      `:. {{ selectEvent }}<br>
+              .:` Name        `:.  ____ <br>
+              .:` Description `:. _______  <br>
+            </p>
 
 
-
-   </div>
+        </div> <!-- MODAL CONTENT ENDS HERE -->
           </section>
           <footer class="modal-card-foot">
             <button class="button is-success">Save changes</button>
@@ -213,6 +149,7 @@
         :: coffeeVariety :: {{ c.coffeeVariety }}     <br>
         :: coffeeIngredients :: {{ c. coffeeIngredients }}     <br>
         :: coffeeBrewingMethod :: {{ c. coffeeBrewingMethod }}     <br>
+        :: coffeeFilter :: {{ c.coffeeFilter }} <br>
         </p>
       </div>
       <nav class="level is-mobile">

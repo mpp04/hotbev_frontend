@@ -11,9 +11,11 @@ export class CustomCoffeeDrinksComponent implements OnInit {
 
   coffees:any=[];
   modalStatus:string=" ";
+  dropdownCoffeeIngredientsStatus:string="";
+  selectEvent:string="";
 
-modalOn() { this.modalStatus="is-active" }
-modalOff() { this.modalStatus=""}
+  modalOn() { this.modalStatus="is-active" }
+  modalOff() { this.modalStatus=""}
 
   constructor(private customCoffeeDrinksService: CustomCoffeeDrinksService) {}
 
@@ -27,6 +29,12 @@ modalOff() { this.modalStatus=""}
     { console.log('getting all custom coffees');
     this.coffees = res; })
   }
+
+
+
+
+  alertSelect($event:any) {  this.selectEvent = $event.target.value }
+
 
 
 

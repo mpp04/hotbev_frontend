@@ -4,6 +4,7 @@ import { IngredientsComponent } from 'src/app/coffee-drinks/components/ingredien
 import { CustomCoffeeDrinksComponent } from './components/custom-coffee-drinks/custom-coffee-drinks.component';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserModule} from "@angular/platform-browser";
+import {CustomCoffeeDrinksService} from "./services/custom-coffee-drinks.service";
 
 
 @NgModule({
@@ -16,6 +17,9 @@ import {BrowserModule} from "@angular/platform-browser";
     CommonModule,
     BrowserModule,
     HttpClientModule
+  ],
+  providers: [
+    CustomCoffeeDrinksService
   ],
   exports: [
     IngredientsComponent,
