@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CoffeeModel } from "src/app/models/coffee-model.model";
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment'
 
@@ -23,6 +23,7 @@ export class CoffeeServiceService {
 
   CoffeesURL = `${environment.CoffeesEndpoint}`;
 
+
   constructor(private httpClient: HttpClient) { }
 
 
@@ -43,5 +44,6 @@ addCoffees(name:string, description:string) {
     '/create?name='+name+'&description='+description, null,
   {'headers': this.headersXForm})
 }
+
 
 }

@@ -5,6 +5,7 @@ import { CustomCoffeeDrinksComponent } from './components/custom-coffee-drinks/c
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserModule} from "@angular/platform-browser";
 import {CustomCoffeeDrinksService} from "./services/custom-coffee-drinks.service";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {CustomCoffeeDrinksService} from "./services/custom-coffee-drinks.service
   imports: [
     CommonModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     CustomCoffeeDrinksService

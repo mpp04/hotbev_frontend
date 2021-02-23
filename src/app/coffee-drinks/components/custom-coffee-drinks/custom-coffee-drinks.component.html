@@ -70,57 +70,81 @@
             short description. <br><br>
                     </p>
 
-     <br><br>
+     <br>
     <label> Coffee Varieties </label>
-    <select (change)="alertSelect($event)">
-      <option value="VALUE1"> VALUE 1</option>
-      <option value="VALUE2"> VALUE 2</option>
-      <option value="VALUE3"> VALUE 3</option>
+    <select (change)="alertSelect($event, 'varieties')">
+      <option *ngFor="let v of varieties"> {{ v.coffeeVarietyName }}</option>
+
     </select>
 
      <br><br>
      <label> Coffee Ingredients </label>
-     <select (change)="alertSelect($event)">
-       <option value="VALUE1"> VALUE 1</option>
-       <option value="VALUE2"> VALUE 2</option>
-       <option value="VALUE3"> VALUE 3</option>
+     <select (change)="alertSelect($event, 'ingredients')">
+       <option *ngFor="let i of ingredients">{{ i.ingredientName }}</option>
+
      </select>
 
      <br><br>
      <label> Coffee Filter </label>
-     <select (change)="alertSelect($event)">
-       <option value="VALUE1"> VALUE 1</option>
-       <option value="VALUE2"> VALUE 2</option>
-       <option value="VALUE3"> VALUE 3</option>
+     <select (change)="alertSelect($event, 'filter')">
+       <option *ngFor="let f of filters"> {{ f.filterTypes  }} </option>
+
      </select>
 
      <br><br>
+
      <label> Coffee Brewing Method </label>
-     <select (change)="alertSelect($event)">
-       <option value="VALUE1"> VALUE 1</option>
-       <option value="VALUE2"> VALUE 2</option>
-       <option value="VALUE3"> VALUE 3</option>
+
+     <select (change)="alertSelect($event, 'brewing')">
+       <option *ngFor="let b of brewingMethods"> {{ b.methodName }} </option>
+
+
      </select>
 
-        <br><br> <br><br> <br><br>
+        <br><br>
             <p>
               <strong>
                 :: YOUR CUSTOM COFFEE DRINK :: <br>
               </strong>
-              .:` Variety     `:. {{ selectEvent }}<br>
-              .:` Ingredients `:. {{ selectEvent }}<br>
-              .:` Filter      `:. {{ selectEvent }}<br>
-              .:` Brewing     <br>
-                  Method      `:. {{ selectEvent }}<br>
-              .:` Name        `:.  ____ <br>
-              .:` Description `:. _______  <br>
+              <label id="variety">[::] Variety [::] {{ coffeeVariety }} </label><br>
+              <label id="ingredients">[::] Ingredients [::]{{ coffeeIngredients }} </label><br>
+              <label id="filter">[::] Filter [::]{{ coffeeFilter }}</label><br>
+              <label>[::] Brewing Method [::] {{ coffeeBrewingMethod }}  </label>
+
+
+                <br>
+
+
+
             </p>
+     <label id="name"> [::] Name [::] </label> <br>
+     <div class="field">
+       <input type="CoffeeName" name="Coffee Drink Name" class="input" placeholder="Coffee Drink Name"
+              [(ngModel)]="coffeeDrinkName" required minlength="8" #nameInput="ngModel">
+       <div class="help is-error" *ngIf="nameInput.invalid && nameInput.dirty">
+         Coffee Drink Name is required and needs to be at least 8 characters long.
+       </div>
+     </div>
+
+     <label id="description">[::] Description [::] </label><br>
+     <input type="CoffeeDescription" name="Coffee Drink Description" class="input"
+            placeholder="Coffee Drink Description"
+            [(ngModel)]="coffeeDrinkDescription" required minlength="50" #descriptionInput="ngModel">
+     <div class="help is-error" *ngIf="descriptionInput.invalid && nameInput.dirty">
+       Description is required and needs to be at least 50 characters long.
+     </div>
+      <br>
+     <br>
+     <br>
+<p> Pressing [ SAVE CHANGES ] submits an http post request to the backend for processing. </p>
+
+
 
 
         </div> <!-- MODAL CONTENT ENDS HERE -->
           </section>
           <footer class="modal-card-foot">
-            <button class="button is-success">Save changes</button>
+            <button class="button is-success" (click)="addCustomCoffeeDrink()">Save changes</button>
             <button class="button" (click)="modalOff()">Close</button>
           </footer>
         </div>
