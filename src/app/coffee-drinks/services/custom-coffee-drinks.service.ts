@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { CustomCoffeeDrinks } from 'src/app/coffee-drinks/models/custom-coffee-drinks.model'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {environment} from "../../../environments/environment";
-import {BrewingMethod} from "../models/brewing-method.model";
-import {Variety} from "../models/variety.model";
-import {Filter} from "../models/filter.model";
-import {Ingredients} from "../models/ingredients.model";
+import { environment } from "../../../environments/environment";
+import { BrewingMethod } from "src/app/coffee-drinks/models/brewing-method.model";
+import { Variety } from "src/app/coffee-drinks/models/variety.model";
+import { Filter } from "src/app/coffee-drinks/models/filter.model";
+import { Ingredients } from "src/app/coffee-drinks/models/ingredients.model";
 
 @Injectable({
   providedIn: 'root'
